@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Kamu 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      width: 85%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.05em;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #ff6f91;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    img {
+      margin-top: 15px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Musik disiapkan tapi tidak autoplay -->
+  <audio id="bgm" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <h1>Selamat Ulang Tahun 🎉</h1>
+    <p>
+      Hari ini spesial,  
+      karena kamu lahir ke dunia  
+      dan tanpa sadar bikin hidupku lebih berwarna.
+    </p>
+
+    <button onclick="showSurprise()">Klik di sini 💌</button>
+
+    <div id="secret" class="hidden">
+      <p>
+        Ini salah satu alasan  
+        kenapa aku selalu bersyukur setiap hari.
+      </p>
+
+      <img src="foto.jpg" alt="Foto Kamu">
+    </div>
+  </div>
+
+  <script>
+    function showSurprise() {
+      const secret = document.getElementById("secret");
+      const music = document.getElementById("bgm");
+
+      secret.style.display = "block";
+      music.volume = 0.6;
+      music.play();
+    }
+  </script>
+
+</body>
+</html>
